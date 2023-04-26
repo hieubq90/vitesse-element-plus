@@ -7,7 +7,6 @@ defineOptions({
 })
 
 const count = ref(0)
-const input = ref('element-plus')
 const curDate = ref('')
 function toast() {
   ElMessage.success('Hello')
@@ -15,7 +14,7 @@ function toast() {
 </script>
 
 <template>
-  <div>
+  <div class="h-screen bg-[url(/imgs/bg.jpg)] bg-cover bg-center bg-no-repeat">
     <div text-4xl>
       <div i-carbon-campsite inline-block />
     </div>
@@ -45,8 +44,8 @@ function toast() {
       </el-button>
     </div>
 
-    <div class="my-2">
-      <el-input v-model="input" class="m-2" style="width: 200px" />
+    <div class="flex flex-row items-center justify-center">
+      <InputWithValidation label="" name="fullName" :transparent="false" />
       <el-date-picker v-model="curDate" class="m-2" type="date" placeholder="Pick a day" />
     </div>
   </div>
