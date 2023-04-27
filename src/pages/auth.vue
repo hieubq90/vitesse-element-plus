@@ -5,6 +5,7 @@ defineOptions({
   name: 'AuthenticationPage',
 })
 
+const router = useRouter()
 const { t } = useI18n()
 
 const schema = {
@@ -16,6 +17,7 @@ function onSubmit(values: any, actions: any) {
   // eslint-disable-next-line no-console
   console.log(JSON.stringify(values, null, 2))
   actions.resetForm()
+  router.push('/dashboard')
 }
 </script>
 
@@ -27,8 +29,8 @@ function onSubmit(values: any, actions: any) {
       </p>
       <Form v-slot="{ handleSubmit }" class="w-full" :validation-schema="schema">
         <el-form label-position="top" size="large" @submit="handleSubmit($event, onSubmit)">
-          <InputWithValidation label="Email" name="email" type="email" transparent />
-          <InputWithValidation label="Password" name="password" type="password" transparent />
+          <InputWithValidation :label="t('global.email')" name="email" type="email" transparent />
+          <InputWithValidation :label="t('global.password')" name="password" type="password" transparent />
           <div class="mb-8 flex flex-row items-center justify-center">
             <el-button class="uppercase" type="primary" native-type="submit">
               {{ t('auth.login') }}

@@ -9,7 +9,9 @@ button:
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
 global:
+  email: Email
   loading: Loading ...
+  password: Password
 intro:
   aka: Also known as
   desc: Opinionated Vite Starter Template

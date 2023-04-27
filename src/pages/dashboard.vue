@@ -46,7 +46,7 @@ function toast() {
 
     <div class="flex flex-row items-center justify-center">
       <InputWithValidation label="" name="fullName" :transparent="false" />
-      <el-date-picker v-model="curDate" class="m-2" type="date" placeholder="Pick a day" />
+      <el-date-picker v-model="curDate" class="mb-4 ml-2" type="date" placeholder="Pick a day" />
     </div>
   </div>
 </template>

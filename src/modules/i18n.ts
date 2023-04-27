@@ -1,5 +1,6 @@
 import type { Locale } from 'vue-i18n'
 import { createI18n } from 'vue-i18n'
+import { setLocale } from '@vee-validate/i18n'
 import { type UserModule } from '~/types'
 
 // Import i18n resources
@@ -47,6 +48,7 @@ export async function loadLanguageAsync(lang: string): Promise<Locale> {
   const messages = await localesMap[lang]()
   i18n.global.setLocaleMessage(lang, messages.default as any)
   loadedLanguages.push(lang)
+  setLocale(lang)
   return setI18nLanguage(lang)
 }
 

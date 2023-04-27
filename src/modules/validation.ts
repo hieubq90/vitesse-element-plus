@@ -32,12 +32,16 @@ export function configVeeValidate() {
         ...en,
         names: {
           // bổ sung tên các field vào đây
+          email: 'Email',
+          password: 'Password',
         },
       },
       vi: {
         ...vi,
         names: {
           // bổ sung tên các field vào đây
+          email: 'Email',
+          password: 'Mật khẩu',
         },
       },
     }),
@@ -46,4 +50,5 @@ export function configVeeValidate() {
 
 export const install: UserModule = () => {
   defineRules()
+  configVeeValidate()
 }

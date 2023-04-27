@@ -19,7 +19,7 @@ async function showLoading() {
 
   setTimeout(async () => {
     loading.close()
-    router.push('/dashboard')
+    router.push('/auth')
   }, 1000)
 }
 

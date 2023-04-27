@@ -9,7 +9,9 @@ button:
   toggle_dark: Chuyển đổi chế độ tối
   toggle_langs: Thay đổi ngôn ngữ
 global:
+  email: Email
   loading: Đang tải dữ liệu ...
+  password: Mật khẩu
 intro:
   desc: Ý kiến cá nhân Vite Template để bắt đầu
   dynamic-route: Bản giới thiệu về dynamic route
