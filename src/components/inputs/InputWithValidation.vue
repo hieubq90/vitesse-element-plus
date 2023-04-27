@@ -28,7 +28,7 @@ export default {
 </script>
 
 <template>
-  <el-form-item :error="errorMessage" :label="label" class="w-[200px]" :class="[transparent && 'transparent-input']">
+  <el-form-item :error="errorMessage" :label="label" :class="[transparent && 'transparent-input']">
     <el-input v-model="value" :placeholder="label" v-bind="$attrs" :validate-event="false" />
   </el-form-item>
 </template>

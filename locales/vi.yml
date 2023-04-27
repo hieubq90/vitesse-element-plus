@@ -1,3 +1,6 @@
+auth:
+  login: Đăng nhập
+  title: Đăng nhập
 button:
   about: Về
   back: Quay lại

@@ -31,6 +31,24 @@ html.dark {
 
 .transparent-input {
   &.el-form-item {
+    @apply mb-4;
+
+    &--large {
+      @apply mb-6;
+    }
+
+
+    label {
+      --el-text-color-regular: white;
+      @apply text-base font-semibold;
+    }
+    .el-form-item__content {
+      .el-form-item__error {
+        @apply text-sm;
+      }
+    }
+    
+
     .el-input {
       &__wrapper {
         @apply bg-transparent backdrop-blur-xl;
