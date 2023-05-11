@@ -7,5 +7,6 @@ $--colors: (
 );
 
 @forward "element-plus/theme-chalk/src/dark/var.scss" with (
-  $colors: $--colors
+  $colors: $--colors,
+  // $button-padding-horizontal: ("default": 50px)
 );
