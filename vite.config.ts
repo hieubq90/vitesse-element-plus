@@ -6,6 +6,8 @@ import generateSitemap from 'vite-ssg-sitemap'
 import Layouts from 'vite-plugin-vue-layouts'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import ElementPlus from 'unplugin-element-plus/vite'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-vue-markdown'
@@ -69,6 +71,9 @@ export default defineConfig({
         ElementPlusResolver({
           importStyle: 'sass',
         }),
+        IconsResolver({
+          prefix: 'Icon',
+        }),
       ],
       dts: 'src/auto-imports.d.ts',
       dirs: [
@@ -85,11 +90,19 @@ export default defineConfig({
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       resolvers: [
+        IconsResolver({
+          enabledCollections: ['ep'],
+        }),
         ElementPlusResolver({
           importStyle: 'sass',
         }),
+
       ],
       dts: 'src/components.d.ts',
+    }),
+
+    Icons({
+      autoInstall: true,
     }),
 
     // https://github.com/antfu/unocss
@@ -193,6 +206,6 @@ export default defineConfig({
 
   ssr: {
     // TODO: workaround until they support native ESM
-    noExternal: ['workbox-window', /vue-i18n/],
+    noExternal: ['workbox-window', /vue-i18n/, 'element-plus', /vee-validate/, /@vee-validate/],
   },
 })

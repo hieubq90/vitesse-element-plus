@@ -49,6 +49,6 @@ export function configVeeValidate() {
 }
 
 export const install: UserModule = () => {
-  defineRules()
-  configVeeValidate()
+  // defineRules()
+  // configVeeValidate()
 }
