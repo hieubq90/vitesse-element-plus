@@ -23,6 +23,8 @@ const schema = {
   password: 'required|min:6',
 }
 
+const savedAccount = ref<any | undefined>(undefined)
+
 const loginHandler = useMutation({
   mutationFn: authApi.loginFn,
   onSuccess: (data, _variables) => {
@@ -34,6 +36,12 @@ const loginHandler = useMutation({
     const { remember } = _variables as any
     if (remember) {
       // lưu thông tin username vào local storage
+      localStorage.setItem('saved_email', _variables.email)
+      localStorage.setItem('remember_account', remember)
+    }
+    else {
+      localStorage.removeItem('saved_email')
+      localStorage.removeItem('remember_account')
     }
     setTimeout(() => router.push('/dashboard'), 500)
   },
@@ -47,6 +55,17 @@ function onSubmit(values: any, actions: any) {
   loginHandler.mutateAsync(values)
   actions.resetForm()
 }
+
+onMounted(() => {
+  const email = useStorage('saved_email', undefined, localStorage)
+  const remember = useStorage('remember_account', false, localStorage)
+  if (remember.value) {
+    savedAccount.value = {
+      email: email.value,
+      remember: true,
+    }
+  }
+})
 </script>
 
 <template>
@@ -76,9 +95,9 @@ function onSubmit(values: any, actions: any) {
             <p>Đăng nhập vào hệ thống.</p>
           </div>
           <!--------------------------- Remember & Forgot ----------------------------->
-          <Form v-slot="{ handleSubmit }" class="w-full" :validation-schema="schema">
+          <Form v-slot="{ handleSubmit }" class="w-full" :validation-schema="schema" :initial-values="savedAccount">
             <ElForm label-position="top" size="large" @submit="handleSubmit($event, onSubmit)">
-              <InputWithValidation :label="t('global.email')" name="email" type="email" :prefix-icon="CarbonAt" />
+              <InputWithValidation :label="t('global.email')" name="email" type="email" :prefix-icon="CarbonAt" autocomplete="off" />
               <InputWithValidation :label="t('global.password')" name="password" type="password" :prefix-icon="CarbonPassword" />
               <div class="flex items-center justify-between">
                 <CheckboxWithValidation :label="t('global.remember')" name="remember" />
