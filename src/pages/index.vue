@@ -8,18 +8,20 @@ defineOptions({
 
 const router = useRouter()
 const { t, locale } = useI18n()
+const authPath = import.meta.env.VITE_AUTH_PATH
 
 async function showLoading() {
   await loadLanguageAsync(locale.value || 'vi')
   const loading = ElLoading.service({
     lock: true,
     text: `${t('global.loading')}`,
-    background: 'rgba(0, 0, 0, 0.7)',
+    background: 'transparent',
+    customClass: 'text-white',
   })
 
   setTimeout(async () => {
     loading.close()
-    router.push('/auth')
+    router.push(authPath)
   }, 1000)
 }
 

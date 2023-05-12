@@ -12,6 +12,7 @@ global:
   email: Email
   loading: Loading ...
   password: Password
+  remember: Remember me
 intro:
   aka: Also known as
   desc: Opinionated Vite Starter Template

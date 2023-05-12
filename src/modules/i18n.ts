@@ -1,7 +1,7 @@
+import type { App, Plugin } from 'vue'
 import type { Locale } from 'vue-i18n'
 import { createI18n } from 'vue-i18n'
 import { setLocale } from '@vee-validate/i18n'
-import { type UserModule } from '~/types'
 
 // Import i18n resources
 // https://vitejs.dev/guide/features.html#glob-import
@@ -41,8 +41,10 @@ export async function loadLanguageAsync(lang: string): Promise<Locale> {
     return setI18nLanguage(lang)
 
   // If the language was already loaded
-  if (loadedLanguages.includes(lang))
+  if (loadedLanguages.includes(lang)) {
+    setLocale(lang)
     return setI18nLanguage(lang)
+  }
 
   // If the language hasn't been loaded yet
   const messages = await localesMap[lang]()
@@ -52,7 +54,16 @@ export async function loadLanguageAsync(lang: string): Promise<Locale> {
   return setI18nLanguage(lang)
 }
 
-export const install: UserModule = ({ app }) => {
-  app.use(i18n)
-  loadLanguageAsync('vi')
+// export const install: UserModule = ({ app }) => {
+//   app.use(i18n)
+//   loadLanguageAsync('vi')
+// }
+
+export const i18nPlugin: Plugin = {
+  install: (app: App, _options: any) => {
+    app.use(i18n)
+    loadLanguageAsync('vi')
+  },
 }
+
+export default i18nPlugin

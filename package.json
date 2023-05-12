@@ -2,7 +2,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "vite-ssg build",
+    "build": "vite build",
     "dev": "vite --port 3333 --open",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -16,11 +16,14 @@
   },
   "dependencies": {
     "@iconify-json/ep": "^1.1.10",
+    "@lukemorales/query-key-factory": "^1.2.0",
+    "@tanstack/vue-query": "^4.29.5",
     "@unocss/reset": "^0.51.4",
     "@vee-validate/i18n": "^4.8.6",
     "@vee-validate/rules": "^4.8.6",
     "@vueuse/core": "^10.0.2",
     "@vueuse/head": "^1.1.26",
+    "axios": "^1.4.0",
     "element-plus": "^2.3.4",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.34",

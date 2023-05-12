@@ -1,9 +1,11 @@
+import type { App, Plugin } from 'vue'
 import { configure, defineRule } from 'vee-validate'
 import { localize } from '@vee-validate/i18n'
 import AllRules from '@vee-validate/rules'
 import en from '@vee-validate/i18n/dist/locale/en.json'
 import vi from '@vee-validate/i18n/dist/locale/vi.json'
-import { type UserModule } from '~/types'
+
+// import { type UserModule } from '~/types'
 
 export function defineRules() {
   Object.keys(AllRules).forEach((rule) => {
@@ -48,7 +50,16 @@ export function configVeeValidate() {
   })
 }
 
-export const install: UserModule = () => {
-  // defineRules()
-  // configVeeValidate()
+// export const install: UserModule = () => {
+//   defineRules()
+//   configVeeValidate()
+// }
+
+export const validationPlugin: Plugin = {
+  install: (_app: App, _options: any) => {
+    defineRules()
+    configVeeValidate()
+  },
 }
+
+export default validationPlugin
