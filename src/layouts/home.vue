@@ -7,7 +7,22 @@
       class="h-full w-full"
       style="background: url('/svg/pattern-1.svg') no-repeat center bottom fixed; background-size: cover;"
     >
-      <RouterView />
+      <el-container class="h-screen w-full">
+        <el-aside class="b-r-1" width="200px">
+          Aside
+        </el-aside>
+        <el-container>
+          <el-header class="b-b-1 drop-shadow-lg">
+            Header
+          </el-header>
+          <el-main>
+            <RouterView />
+          </el-main>
+          <el-footer class="b-t-1">
+            Footer
+          </el-footer>
+        </el-container>
+      </el-container>
     </div>
   </main>
 </template>

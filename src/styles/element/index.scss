@@ -19,10 +19,16 @@ $--colors: (
   ),
 );
 
+$VNamespace: v;
+// elNamespace
+$ELNamespace: el;
+
+
+
 // we can add this to custom namespace, default is 'el'
-// @forward "element-plus/theme-chalk/src/mixins/config.scss" with (
-//   $namespace: "ep"
-// );
+@forward "element-plus/theme-chalk/src/mixins/config.scss" with (
+  $namespace: $ELNamespace,
+);
 
 // You should use them in scss, because we calculate it by sass.
 // comment next lines to use default color
@@ -42,14 +48,9 @@ $--colors: (
 @use "./dark.scss";
 
 
-.el-loading-mask {
-  &.text-white {
-    .el-loading-spinner .el-loading-text {
-      color: white !important;
-    }
 
-    .el-loading-spinner .path {
-      stroke: white !important;
-    }
-  }
+// export variable for use in JS
+:export {
+  vNamespace: $VNamespace;
+  elNamespace: $ELNamespace;
 }

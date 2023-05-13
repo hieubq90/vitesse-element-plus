@@ -66,6 +66,10 @@ onMounted(() => {
     }
   }
 })
+
+useHead({
+  title: 'Đăng nhập',
+})
 </script>
 
 <template>

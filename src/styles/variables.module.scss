@@ -1,0 +1,10 @@
+// Namespace
+$VNamespace: v;
+// elNamespace
+$ELNamespace: el;
+
+// export variable for use in JS
+:export {
+  VNamespace: $VNamespace;
+  ELNamespace: $ELNamespace;
+}

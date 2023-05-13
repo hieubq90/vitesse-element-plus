@@ -1,6 +1,7 @@
 import path from 'node:path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import VueJsx from '@vitejs/plugin-vue-jsx'
 import Pages from 'vite-plugin-pages'
 
 // import generateSitemap from 'vite-ssg-sitemap'
@@ -35,6 +36,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: '@use "~/styles/element/index.scss" as *;',
+        javascriptEnabled: true,
       },
     },
   },
@@ -49,6 +51,7 @@ export default defineConfig({
         vue: Vue({
           include: [/\.vue$/, /\.md$/],
         }),
+        vueJsx: VueJsx(),
       },
     }),
 

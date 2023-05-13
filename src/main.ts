@@ -9,12 +9,14 @@ import nprogressPlugin from '~/modules/nprogress'
 import i18nPlugin from '~/modules/i18n'
 import validationPlugin from '~/modules/validation'
 import piniaPlugin from '~/modules/pinia'
+import headPlugin from '~/modules/head'
 
 // import Previewer from 'virtual:vue-component-preview'
 // import type { UserModule } from './types'
 
 import '@unocss/reset/tailwind-compat.css'
-import '~/styles/main.scss'
+import 'animate.css'
+import './styles/main.scss'
 import 'uno.css'
 
 import generatedRoutes from '~pages'
@@ -42,6 +44,7 @@ app.use(router)
 app.use(nprogressPlugin, { router })
 app.use(i18nPlugin)
 app.use(validationPlugin)
+app.use(headPlugin)
 app.use(piniaPlugin)
 app.use(VueQueryPlugin)
 app.mount('#app')

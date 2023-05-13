@@ -6,6 +6,8 @@ defineOptions({
   name: 'DashPage',
 })
 
+const { variables } = useDesign()
+
 const count = ref(0)
 const curDate = ref('')
 function toast() {
@@ -14,7 +16,8 @@ function toast() {
 </script>
 
 <template>
-  <div class="h-screen bg-[url(/imgs/bg.jpg)] bg-cover bg-center bg-no-repeat">
+  <div class="h-full">
+    <p>{{ JSON.stringify(variables) }}</p>
     <div text-4xl>
       <div i-carbon-campsite inline-block />
     </div>
@@ -53,5 +56,5 @@ function toast() {
 
 <route lang="yaml">
 meta:
-  layout: home
+  layout: advanced
 </route>

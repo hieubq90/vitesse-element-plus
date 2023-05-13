@@ -42,4 +42,15 @@ export default defineConfig({
     transformerVariantGroup(),
   ],
   safelist: 'prose m-auto text-left'.split(' '),
+  preflights: [
+    {
+      layer: 'base',
+      getCSS: () => `
+    button,select,input,option {
+      outline: none;
+      -webkit-appearance: none
+    }
+    `,
+    },
+  ],
 })

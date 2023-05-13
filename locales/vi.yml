@@ -1,18 +1,45 @@
 auth:
   login: Đăng nhập
   title: Đăng nhập
-button:
-  about: Về
-  back: Quay lại
-  go: Đi
-  home: Khởi đầu
-  toggle_dark: Chuyển đổi chế độ tối
-  toggle_langs: Thay đổi ngôn ngữ
 global:
   email: Email
   loading: Đang tải dữ liệu ...
   password: Mật khẩu
   remember: Nhớ tài khoản
+setting:
+  projectSetting: Cấu hình
+  theme: Giao diện
+  layout: Layout
+  systemTheme: Màu hệ thống
+  menuTheme: Màu menu
+  interfaceDisplay: Hiển thị
+  breadcrumb: Breadcrumb
+  breadcrumbIcon: Hiện Breadcrumb Icon
+  collapseMenu: Thu gọn menu
+  hamburgerIcon: Nút Hamburger
+  screenfullIcon: Nút Full Screen
+  sizeIcon: Kích thước chữ
+  localeIcon: Đổi ngôn ngữ
+  tagsView: Thẻ hiển thị
+  logo: Logo ứng dụng
+  greyMode: Chế độ màu xám
+  fixedHeader: Header cố định
+  headerTheme: Header
+  cutMenu: Cut Menu
+  copy: Copy
+  clearAndReset: Xoá bộ nhớ đệm và tải lại
+  copySuccess: Copy thành công
+  copyFailed: Copy không thành công
+  footer: Footer
+  uniqueOpened: Mở duy nhất
+  tagsViewIcon: Hiện icon thẻ hiển thị
+  dynamicRouter: Định tuyến động
+  reExperienced: Vui lòng đăng nhập lại
+  fixedMenu: Menu cố định
+size: 
+  default: Mặc định
+  large: Lớn
+  small: Nhỏ
 intro:
   desc: Ý kiến cá nhân Vite Template để bắt đầu
   dynamic-route: Bản giới thiệu về dynamic route

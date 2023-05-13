@@ -27,7 +27,7 @@ async function toggleLocales() {
     </a>
 
     <RouterLink icon-btn to="/about" :title="t('button.about')">
-      <div i-carbon-dicom-overlay />
+      <div class="i-ant-design:menu-unfold-outlined" />
     </RouterLink>
 
     <a icon-btn rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank" title="GitHub">

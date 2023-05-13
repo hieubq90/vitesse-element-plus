@@ -26,6 +26,10 @@
       "element-plus/global",
       "unplugin-icons/types/vue"
     ],
+    "typeRoots": [
+      "./node_modules/@types/",
+      "./types"
+    ],
     "paths": {
       "~/*": ["src/*"]
     }
