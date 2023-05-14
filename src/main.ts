@@ -18,6 +18,7 @@ import '@unocss/reset/tailwind-compat.css'
 import 'animate.css'
 import './styles/main.scss'
 import 'uno.css'
+import '~/modules/svgIcon'
 
 import generatedRoutes from '~pages'
 

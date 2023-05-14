@@ -3,8 +3,8 @@ import { ref } from 'vue'
 import { ElSwitch } from 'element-plus'
 import { useAppStore } from '~/stores/modules/app'
 
-import Sun from '~icons/emojione-monotone/sun'
-import CrescentMoon from '~icons/emojione-monotone/crescent-moon'
+const Sun = useIcon({ icon: 'emojione-monotone:sun', color: '#fde047' })
+const CrescentMoon = useIcon({ icon: 'emojione-monotone:crescent-moon', color: '#fde047' })
 
 const { getPrefixCls } = useDesign()
 

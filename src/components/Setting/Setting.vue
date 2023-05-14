@@ -4,7 +4,6 @@ import { useClipboard, useCssVar } from '@vueuse/core'
 import ColorRadioPicker from './ColorRadioPicker.vue'
 import InterfaceDisplay from './InterfaceDisplay.vue'
 import LayoutRadioPicker from './LayoutRadioPicker.vue'
-import ThemeSwitch from './ThemeSwitch.vue'
 import { colorIsDark, hexToRGB, lighten } from '~/utils/color'
 import { useAppStore } from '~/stores/modules/app'
 import { setCssVar, trim } from '~/utils'
@@ -214,8 +213,8 @@ function clear() {
 
     <div class="text-center">
       <!-- 主题 -->
-      <ElDivider>{{ t('setting.theme') }}</ElDivider>
-      <ThemeSwitch />
+      <!-- <ElDivider>{{ t('setting.theme') }}</ElDivider>
+      <ThemeSwitch /> -->
 
       <!-- 布局 -->
       <ElDivider>{{ t('setting.layout') }}</ElDivider>

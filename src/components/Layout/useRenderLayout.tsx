@@ -3,7 +3,8 @@ import AppView from './AppView.vue'
 import ToolHeader from './ToolHeader.vue'
 import { useAppStore } from '~/stores/modules/app'
 
-// import { Menu } from '@/components/Menu'
+import Menu from '~/components/Menu/Menu.vue'
+
 // import { TabMenu } from '@/components/TabMenu'
 // import { TagsView } from '@/components/TagsView'
 import Logo from '~/components/Logo/Logo.vue'
@@ -34,7 +35,8 @@ const mobile = computed(() => appStore.getMobile)
 // 固定菜单
 const fixedMenu = computed(() => appStore.getFixedMenu)
 
-export function useRenderLayout() {
+// eslint-disable-next-line antfu/top-level-function
+export const useRenderLayout = () => {
   const renderClassic = () => {
     return (
       <>

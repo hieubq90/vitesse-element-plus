@@ -28,7 +28,9 @@ declare module '@vue/runtime-core' {
     ElInput: typeof import('element-plus/es')['ElInput']
     ElMain: typeof import('element-plus/es')['ElMain']
     Footer: typeof import('./components/Layout/Footer.vue')['default']
+    FullScreen: typeof import('./components/Layout/FullScreen.vue')['default']
     GlobalConfig: typeof import('./components/Config/GlobalConfig.vue')['default']
+    Icon: typeof import('./components/Icon/Icon.vue')['default']
     IEpAddLocation: typeof import('~icons/ep/add-location')['default']
     InputWithValidation: typeof import('./components/Inputs/InputWithValidation.vue')['default']
     InterfaceDisplay: typeof import('./components/Setting/InterfaceDisplay.vue')['default']
@@ -40,8 +42,10 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Setting: typeof import('./components/Setting/Setting.vue')['default']
+    SizeDropdown: typeof import('./components/Layout/SizeDropdown.vue')['default']
     TheFooter: typeof import('./components/TheFooter.vue')['default']
     ThemeSwitch: typeof import('./components/Setting/ThemeSwitch.vue')['default']
     ToolHeader: typeof import('./components/Layout/ToolHeader.vue')['default']
+    ToolHeader2: typeof import('./components/Layout/ToolHeader2.vue')['default']
   }
 }

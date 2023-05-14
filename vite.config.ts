@@ -6,6 +6,7 @@ import Pages from 'vite-plugin-pages'
 
 // import generateSitemap from 'vite-ssg-sitemap'
 import Layouts from 'vite-plugin-vue-layouts'
+import PurgeIcons from 'vite-plugin-purge-icons'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import ElementPlus from 'unplugin-element-plus/vite'
 import Icons from 'unplugin-icons/vite'
@@ -25,6 +26,10 @@ import Shiki from 'markdown-it-shiki'
 // @ts-expect-error failed to resolve types
 import VueMacros from 'unplugin-vue-macros/vite'
 import WebfontDownload from 'vite-plugin-webfont-dl'
+
+// function pathResolve(dir: string) {
+//   return resolve(root, '.', dir)
+// }
 
 export default defineConfig({
   resolve: {
@@ -113,6 +118,13 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
     Unocss(),
+
+    // createSvgIconsPlugin({
+    //   iconDirs: [pathResolve('~/assets/svgs')],
+    //   symbolId: 'icon-[dir]-[name]',
+    //   svgoOptions: true,
+    // }),
+    PurgeIcons(),
 
     // https://github.com/antfu/vite-plugin-vue-markdown
     // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite

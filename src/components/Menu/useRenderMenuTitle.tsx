@@ -1,7 +1,5 @@
 import type { RouteMeta } from 'vue-router'
 
-// import { Icon } from '@/components/Icon'
-
 export function useRenderMenuTitle() {
   const renderMenuTitle = (meta: RouteMeta) => {
     const { t } = useI18n()

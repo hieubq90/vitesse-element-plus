@@ -108,10 +108,8 @@ export default defineComponent({
         class={[
           `${prefixCls} ${prefixCls}__${unref(menuMode)}`,
           'h-[100%] overflow-hidden flex-col bg-[var(--left-menu-bg-color)]',
-          {
-            'w-[var(--left-menu-min-width)]': unref(collapse) && unref(layout) !== 'cutMenu',
-            'w-[var(--left-menu-max-width)]': !unref(collapse) && unref(layout) !== 'cutMenu',
-          },
+          unref(collapse) && unref(layout) !== 'cutMenu' && 'w-[var(--left-menu-min-width)]',
+          !unref(collapse) && unref(layout) !== 'cutMenu' && 'w-[var(--left-menu-max-width)]',
         ]}
       >
         {renderMenuWrap()}
@@ -222,10 +220,10 @@ $prefix-cls: '#{$VNamespace}-menu';
 
   // 水平菜单
   &__horizontal {
-    height: calc('var(--top-tool-height)') !important;
+    height: calc(var(--top-tool-height)) !important;
 
     :deep(.#{$ELNamespace}-menu--horizontal) {
-      height: calc('var(--top-tool-height)');
+      height: calc(var(--top-tool-height));
       border-bottom: none;
 
       // 重新设置底部高亮颜色
@@ -245,9 +243,9 @@ $prefix-cls: '#{$VNamespace}-menu';
 
       .#{$prefix-cls}__title {
         /* stylelint-disable-next-line */
-        max-height: calc('var(--top-tool-height) - 2px') !important;
+        max-height: calc(var(--top-tool-height) - 2px) !important;
         /* stylelint-disable-next-line */
-        line-height: calc('var(--top-tool-height) - 2px');
+        line-height: calc(var(--top-tool-height) - 2px);
       }
     }
   }
