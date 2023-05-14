@@ -56,5 +56,5 @@ function toast() {
 
 <route lang="yaml">
 meta:
-  layout: advanced
+  layout: home
 </route>
