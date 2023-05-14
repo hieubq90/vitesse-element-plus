@@ -35,7 +35,10 @@ function onCancel() {
 }
 
 function onSubmit(values: any, actions: any) {
-  if (!(values instanceof Event)) {
+  if (!props.isForm.value && (values instanceof Event)) {
+    emit('submit', values)
+  }
+  else if (props.isForm.value && !(values instanceof Event)) {
     emit('submit', values)
     actions.resetForm()
   }

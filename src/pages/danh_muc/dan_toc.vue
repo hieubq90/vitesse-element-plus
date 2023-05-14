@@ -107,13 +107,15 @@ const remover = useMutation({
   onSuccess: (_data, _variables) => {
     // data là response data
     // ElMessage.success('Đăng nhập thành công')
-    showFormModal.value = false
+    confirmDelete.value = false
+    deletingItem.value = undefined
     reloadData()
   },
   onError: (_error, _variables) => {
     // _error là error response data
     // _variables là body gửi lên
-    showFormModal.value = false
+    confirmDelete.value = false
+    deletingItem.value = undefined
   },
 })
 
@@ -209,7 +211,7 @@ function cancel(isDeleting = false) {
       <el-table-column type="selection" width="55" />
       <el-table-column fixed prop="id" label="Mã dân tộc" width="150" />
       <el-table-column prop="name" label="Tên dân tộc" />
-      <el-table-column fixed="right" label="Hành động" width="150">
+      <el-table-column fixed="right" align="right" label="Hành động" width="150">
         <template #default="{ row }">
           <el-button type="primary" size="small" circle @click="() => handleEditItem(row)">
             <div class="fal fa-pencil" />
