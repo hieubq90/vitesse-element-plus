@@ -33,56 +33,73 @@ const title = import.meta.env.VITE_APP_NAME
           <!-- MENU -->
           <div class="menu-wrapper bg-white transition-all duration-500" :class="[collapsedMenu && 'menu-wrapper__collapsed']">
             <el-menu
-              default-active="2"
               class="v-menu !b-r-0"
+              router
               :collapse="collapsedMenu"
             >
-              <el-sub-menu index="1">
+              <el-menu-item index="/dashboard">
+                <el-icon><div class="fal fa-desktop mr-2 text-16px" /></el-icon>
                 <template #title>
-                  <el-icon><div class="i-carbon:license-draft mr-2 text-16px" /></el-icon>
-                  <span>Navigator One</span>
-                </template>
-                <el-menu-item-group>
-                  <template #title>
-                    <span>Group One</span>
-                  </template>
-                  <el-menu-item index="1-1">
-                    item one
-                  </el-menu-item>
-                  <el-menu-item index="1-2">
-                    item two
-                  </el-menu-item>
-                </el-menu-item-group>
-                <el-menu-item-group title="Group Two">
-                  <el-menu-item index="1-3">
-                    item three
-                  </el-menu-item>
-                </el-menu-item-group>
-                <el-sub-menu index="1-4">
-                  <template #title>
-                    <span>item four</span>
-                  </template>
-                  <el-menu-item index="1-4-1">
-                    item one
-                  </el-menu-item>
-                </el-sub-menu>
-              </el-sub-menu>
-              <el-menu-item index="2">
-                <el-icon><div class="i-carbon:license-draft mr-2 text-16px" /></el-icon>
-                <template #title>
-                  Navigator Two
+                  Bảng điều khiển
                 </template>
               </el-menu-item>
-              <el-menu-item index="3" disabled>
-                <el-icon><div class="i-carbon:license-draft mr-2 text-16px" /></el-icon>
+              <el-sub-menu index="/danh_muc">
                 <template #title>
-                  Navigator Three
+                  <el-icon><div class="fal fa-list mr-2 text-16px" /></el-icon>
+                  <span>QL Danh mục</span>
+                </template>
+                <!-- Địa phương -->
+                <el-menu-item-group title="Dân tộc & Địa phương">
+                  <el-menu-item index="/danh_muc/dan_toc">
+                    Dân tộc
+                  </el-menu-item>
+                  <el-menu-item index="/danh_muc/tinh_thanh_pho">
+                    Tỉnh - Thành phố
+                  </el-menu-item>
+                  <el-menu-item index="/danh_muc/quan_huyen">
+                    Quận - Huyện
+                  </el-menu-item>
+                  <el-menu-item index="/danh_muc/xa_phuong">
+                    Xã - Phường
+                  </el-menu-item>
+                </el-menu-item-group>
+                <el-menu-item-group title="Phân loại khác">
+                  <el-menu-item index="/danh_muc/tuyen_don_vi">
+                    Tuyến đơn vị
+                  </el-menu-item>
+                  <el-menu-item index="/danh_muc/loai_tai_lieu">
+                    Loại tài liệu
+                  </el-menu-item>
+                  <el-menu-item index="/danh_muc/don_vi_tinh">
+                    Đơn vị tính
+                  </el-menu-item>
+                  <el-menu-item index="/danh_muc/loai_tieu_chi">
+                    Loại tiêu chí
+                  </el-menu-item>
+                </el-menu-item-group>
+              </el-sub-menu>
+              <el-menu-item index="2">
+                <el-icon><div class="fal fa-sitemap mr-2 text-16px" /></el-icon>
+                <template #title>
+                  QL Đơn vị
+                </template>
+              </el-menu-item>
+              <el-menu-item index="3">
+                <el-icon><div class="fal fa-users mr-2 text-16px" /></el-icon>
+                <template #title>
+                  QL Người dùng
                 </template>
               </el-menu-item>
               <el-menu-item index="4">
-                <el-icon><div class="i-carbon:license-draft mr-2 text-16px" /></el-icon>
+                <el-icon><div class="fal fa-tasks mr-2 text-16px" /></el-icon>
                 <template #title>
-                  Navigator Four
+                  QL Dự án
+                </template>
+              </el-menu-item>
+              <el-menu-item index="5">
+                <el-icon><div class="fal fa-analytics mr-2 text-16px" /></el-icon>
+                <template #title>
+                  QL Báo cáo
                 </template>
               </el-menu-item>
             </el-menu>

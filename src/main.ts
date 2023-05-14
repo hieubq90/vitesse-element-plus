@@ -2,7 +2,6 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { setupLayouts } from 'virtual:generated-layouts'
-import { VueQueryPlugin } from '@tanstack/vue-query'
 
 import App from './App.vue'
 import nprogressPlugin from '~/modules/nprogress'
@@ -10,6 +9,7 @@ import i18nPlugin from '~/modules/i18n'
 import validationPlugin from '~/modules/validation'
 import piniaPlugin from '~/modules/pinia'
 import headPlugin from '~/modules/head'
+import vueQueryPlugin from '~/modules/vueQuery'
 
 // import Previewer from 'virtual:vue-component-preview'
 // import type { UserModule } from './types'
@@ -47,5 +47,5 @@ app.use(i18nPlugin)
 app.use(validationPlugin)
 app.use(headPlugin)
 app.use(piniaPlugin)
-app.use(VueQueryPlugin)
+app.use(vueQueryPlugin)
 app.mount('#app')

@@ -1,3 +1,3 @@
 export type ElementPlusSize = 'default' | 'small' | 'large'
 
-export type ElementPlusInfoType = 'success' | 'info' | 'warning' | 'danger'
+export type ElementPlusInfoType = 'primary' | 'success' | 'info' | 'warning' | 'danger' 

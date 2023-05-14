@@ -1,7 +1,7 @@
 import { createQueryKeys } from '@lukemorales/query-key-factory'
 import service from '~/api/http'
 
-import type { LoginBody, TokenData } from '~/types/types'
+import type { LoginBody, TokenData } from '~/types'
 
 const PREFIX_PATH = 'auth'
 

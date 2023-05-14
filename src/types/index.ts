@@ -16,3 +16,8 @@ export interface TokenData {
 export interface ErrorData {
   detail?: string
 }
+
+export interface DanToc {
+  id?: number
+  name: string
+}

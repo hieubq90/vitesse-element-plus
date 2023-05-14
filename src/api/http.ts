@@ -20,6 +20,7 @@ const axiosInstance: AxiosInstance = axios.create({
 })
 
 function onRequest(config: AdaptAxiosRequestConfig): AdaptAxiosRequestConfig {
+  // console.log('[onRequest]', config)
   return config
 }
 
@@ -54,6 +55,8 @@ async function onResponseError(error: AxiosError) {
 axiosInstance.interceptors.response.use(onResponse, onResponseError)
 
 export function setRequestHeader(header: string, value: string) {
+  // eslint-disable-next-line no-console
+  console.log('setRequestHeader', header, value)
   axiosInstance.defaults.headers.common[header] = value
 }
 
